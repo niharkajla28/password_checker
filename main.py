@@ -46,4 +46,3 @@ if __name__ == '__main__':
 
     input_from_file()
 
-    
