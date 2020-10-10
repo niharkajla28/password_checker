@@ -13,8 +13,8 @@ if __name__ == '__main__':
         return res
 
     def get_password_leaks_count(hashes, hash_to_check):
-        hashes = (line.split(':') for line in hashes.text.splitlines())
-        for h, count in hashes:
+        hashes1 = (line.split(':') for line in hashes.text.splitlines())
+        for h, count in hashes1:
             if h == hash_to_check:
                 return count
         return 0
@@ -30,9 +30,9 @@ if __name__ == '__main__':
 
     def main_func(args):
         for item in args:
-            check = pwned_api_check(item)
-            if check:
-                print(f'Your password: {item} is compromised {check} times.')
+            count = pwned_api_check(item)
+            if count:
+                print(f'Your password: {item} is compromised {count} times.')
             else:
                 print(f'Your password: {item} is not compromised.')
 
